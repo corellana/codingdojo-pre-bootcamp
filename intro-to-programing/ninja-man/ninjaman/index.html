@@ -92,6 +92,8 @@
         y: 6
     }
 
+    var score = 0;
+
     function drawNinjaman() {
         document.getElementById('ninjaman').style.top = ninjaman.y * 40 + 'px'
         document.getElementById('ninjaman').style.left = ninjaman.x * 40 + 'px'
@@ -120,31 +122,15 @@
                 ninjaman.y--;
             }
         }
+        // Keep Score of how many Sushi's NinjaMan eats. 10 points per sushi
+        if(world[ninjaman.y][ninjaman.x] == 2 ){
+            score = score + 10;
+            console.log(score);
+        }
         world[ninjaman.y][ninjaman.x] = 0;
         drawNinjaman()
         drawWorld()
     }
-
-    // //  Keep Score of how many Sushi's NinjaMan eats
-    // function drawScore(){
-    //     var score = 0;
-
-    //     for (var row = 0; row < world.length; row++){
-    //         // Si #ninjaman está en la misma ubicación de un .sushi...
-    //         if(#ninjaman)
-    //         // Suma 10 puntos de puntaje
-    //         score = score + 10;
-    //     }
-    //     drawScore()
-    // }
-
-
-
-
-
-
-
-
 
     // sushi = 10pts onigiri = 5pts
     // Advance Challenges - random world
