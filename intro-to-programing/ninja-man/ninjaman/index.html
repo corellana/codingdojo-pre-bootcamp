@@ -114,13 +114,38 @@
                 ninjaman.y++;
             }
         }
-        // Add going down functionalit
+        // Going up funcionality
+        if (e.keyCode == 38) {
+            if (world[ninjaman.y - 1][ninjaman.x] != 1) {
+                ninjaman.y--;
+            }
+        }
         world[ninjaman.y][ninjaman.x] = 0;
         drawNinjaman()
         drawWorld()
     }
 
-    // Keep score of how many sushi's ninjaman eats
+    // //  Keep Score of how many Sushi's NinjaMan eats
+    // function drawScore(){
+    //     var score = 0;
+
+    //     for (var row = 0; row < world.length; row++){
+    //         // Si #ninjaman está en la misma ubicación de un .sushi...
+    //         if(#ninjaman)
+    //         // Suma 10 puntos de puntaje
+    //         score = score + 10;
+    //     }
+    //     drawScore()
+    // }
+
+
+
+
+
+
+
+
+
     // sushi = 10pts onigiri = 5pts
     // Advance Challenges - random world
     // Hacker challenges - create ghosts that chase ninjaman
