@@ -83,13 +83,18 @@
     }
 
     function drawWorld() {
-        output = "";
+        var output = "";
 
+        // For every row
         for (var row = 0; row < world.length; row++) {
+            // Create a row div
             output += "<div class = 'row'>"
+            // For every column    
             for (var x = 0; x < world[row].length; x++) {
+                // Create a div within the row
                 output += "<div class = '" + worldDict[world[row][x]] +"'></div>"
             }
+            // Close the row div
             output += "</div>"
         }
 
@@ -135,12 +140,10 @@
         // Keep Score of how many Sushi's NinjaMan eats. 10 points per sushi
         if(world[ninjaman.y][ninjaman.x] == 2 ){
             score = score + 10;
-            console.log(score);
         }
         // Keep Score of how many Onigiri's NinjaMan eats. 5 points per onigiri
         if(world[ninjaman.y][ninjaman.x] == 3 ){
             score = score + 5;
-            console.log(score);
         }
 
 
@@ -149,7 +152,22 @@
         drawWorld()
     }
 
-    // sushi = 10pts onigiri = 5pts
+
+    // Random world generated when loading the page
+    function randomNumber(){
+        // For every row
+        for (var row=0; row < world.length; row++){
+            // For every index in the row
+            for (var index=0; index < world[row].length; index++){
+                // Make it random
+                world[row][index] = Math.round(Math.random() * 3);
+            }
+        }      
+    }
+    randomNumber()
+    drawWorld()
+
+
     // Advance Challenges - random world
     // Hacker challenges - create ghosts that chase ninjaman
 </script>
